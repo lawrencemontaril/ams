@@ -1,0 +1,245 @@
+@import "base.css";
+
+/* Navigation bar and its contents */
+.navbar {
+    font-family: var(--ff-accent);
+    font-size: var(--fs-300);
+
+    min-height: 4rem;
+    width: 100%;
+    padding: 0.5em 10%;
+    color: var(--clr-text);
+    background-color: var(--clr-surface);
+    border-bottom: 1px solid var(--clr-text);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar_user, .navbar_func {
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+}
+
+.navbar_user {
+    justify-content: flex-start;
+}
+
+.navbar_func {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--ff-base);
+}
+
+.static-info {
+    font-family: var(--ff-accent);
+    font-size: var(--fs-300);
+
+    padding: 0.25em 0.5em;
+    color: var(--clr-surface);
+    background-color: var(--clr-text);
+    border: 1px solid var(--clr-text);
+}
+
+/* index.php layout */
+.login-layout {
+    min-height: 85vh;
+
+    display: grid;
+    grid-template-columns: auto;
+    place-items: center;
+}
+
+.login-form {    
+    display: grid;
+    grid-template-columns: auto;
+    gap: 0.5em;
+
+    padding: 0.5em;
+    background-color: var(--clr-secondary);
+
+    font-family: var(--ff-accent);
+    font-size: var(--fs-300);
+}
+
+/* Dashboard layout */
+.dashboard-layout {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'dash-header' 'sched-grid';
+    gap: 1em;
+
+    padding: 0.5em 10%;
+}
+
+.dash-header {
+    grid-area: dash-header;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+
+.dash-header h1 {
+    color: var(--clr-text);
+}
+
+.nav-menu {
+    width: 100%;
+    padding: 0.5em;
+    background-color: var(--clr-secondary);
+    border: 1px solid var(--clr-text);
+
+    position: relative
+}
+
+.nav-menu.sticky {
+    width: 80%;
+    position: fixed;
+    top: 4rem;
+    left: 0;
+    margin: 0 10%;
+    z-index: 100;
+}
+
+/* */
+.sched-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(256px, 1fr));
+    grid-template-rows: auto 1fr;
+    gap: 1em;
+    grid-area: sched-grid;
+}
+
+.item-box {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+    gap: 0.5em;
+}
+
+.key, .value {
+    padding: 0.5em;
+}
+
+.item {
+    font-family: var(--ff-accent);
+
+    border: 1px solid var(--clr-text);
+
+    display: grid;
+    grid-template-columns: auto 1fr;
+}
+
+.key {
+    width: 100px;
+    color: var(--clr-surface);
+    background-color: var(--clr-text);
+    text-align: center;
+}
+
+.value {
+    color: var(--clr-text);
+    background-color: var(--clr-secondary);
+}
+
+/* Window styling */
+.window {
+    width: fit-content;
+    border: 1px solid var(--clr-text);
+    transition: ease all 1s;
+    display: block;
+}
+
+.window-titlebar {
+    min-height: 2em;
+    padding-left: 0.5em;
+    color: var(--clr-surface);
+    background-color: var(--clr-text);
+    border-bottom: 1px solid var(--clr-text);
+
+    font-size: var(--fs-300);
+
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    position: relative
+}
+
+.window-title {
+    font-family: var(--ff-mono);
+}
+
+.window-func {
+    display: flex;
+    flex-direction: row;
+    width: fit-content
+}
+
+
+.window-content {
+    background-color: var(--clr-secondary);
+}
+
+/*** Buttons ***/
+.btn-wrapper {
+    display: block;
+    width: fit-content;
+    background-color: #3b4252;
+}
+
+.window-func {
+    display: none;
+}
+
+.window-titlebar:hover .window-func {
+    display: initial
+}
+
+.btn-wrapper:hover .btn, .btn:focus {
+    transform: translateX(-4px) translateY(-4px);
+    transition: ease all 100ms;
+    outline: none;
+}
+
+.btn-wrapper:active .btn {
+    transform: translateX(0px) translateY(0px);
+    transition: ease all 100ms;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+
+    font-family: var(--ff-accent);
+    font-size: inherit;
+
+    padding: 0.25rem 0.5em;
+    border: 1px solid var(--clr-text);
+
+    transform: translateX(0px) translateY(0px);
+    transition: ease all 100ms;
+    cursor: pointer;
+}
+
+/* Button colors */
+.btn--blue {
+    color: var(--clr-surface);
+    background-color: var(--clr-primary);
+}
+
+.btn--red {
+    color: var(--clr-surface);
+    background-color: var(--clr-red);
+}
+
+/* Button sizes */
+
+.btn--small {
+    font-size: var(--fs-200);
+}

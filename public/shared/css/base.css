@@ -1,0 +1,114 @@
+/* Base font */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+
+/* Accent font */
+@font-face {
+    font-family: "Mabry Pro", sans-serif;
+    src: url("../fonts/MabryPro-Regular.woff2");
+}
+
+/* Monospaced font */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
+:root {
+    --ff-base: "DM Serif Display", serif;
+    --ff-accent: "Mabry Pro", sans-serif;
+    --ff-mono: "JetBrains Mono", monospaced;
+
+    --fs-100: clamp(0.72rem, calc(0.81rem + -0.12vw), 0.79rem);
+    --fs-200: clamp(0.89rem, calc(0.88rem + 0.02vw), 0.90rem);
+    --fs-300: clamp(1.00rem, calc(0.96rem + 0.22vw), 1.13rem);
+    --fs-400: clamp(1.13rem, calc(1.03rem + 0.49vw), 1.41rem);
+    --fs-500: clamp(1.27rem, calc(1.09rem + 0.86vw), 1.76rem);
+    --fs-600: clamp(1.42rem, calc(1.15rem + 1.35vw), 2.20rem);
+    --fs-700: clamp(1.60rem, calc(1.20rem + 1.99vw), 2.75rem);
+    --fs-800: clamp(1.80rem, calc(1.23rem + 2.84vw), 3.43rem);
+
+    /* Global colors */
+    --clr-red: #bf616a;
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --clr-text: #232731;
+        --clr-surface: #eceff4;
+        --clr-primary: #5e81ac;
+        --clr-secondary: #d8dee9;
+        --clr-accent: #A3BE8C;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --clr-text: #eceff4;
+        --clr-surface: #232731;
+        --clr-primary: #5e81ac;
+        --clr-secondary: #2e3440;
+        --clr-accent: #A3BE8C;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    color-scheme: light dark;
+}
+
+body {
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-areas: 'header' 'main' 'footer';
+    grid-template-rows: auto 3fr auto;
+
+    background-color: var(--clr-surface);
+}
+
+header {
+    grid-area: header;
+}
+
+main {
+    grid-area: main;
+}
+
+footer {
+    grid-area: footer;
+}
+
+/* Tags */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--ff-base);
+}
+
+/* p, a, span, li {
+    font-family: var(--ff-accent);
+} */
+
+a {
+    text-decoration: none;
+}
+
+input {
+    padding: 0.5em 0.75em;
+    outline: none;
+    border: 1px solid var(--clr-text);
+}
+
+.ff-base { font-family: var(--ff-base) !important; }
+.ff-accent { font-family: var(--ff-accent) !important; }
+.ff-mono { font-family: var(--ff-mono) !important; }
+
+.fs-100 { font-size: var(--fs-100) !important; }
+.fs-200 { font-size: var(--fs-200) !important; }
+.fs-300 { font-size: var(--fs-300) !important; }
+.fs-400 { font-size: var(--fs-400) !important; }
+.fs-500 { font-size: var(--fs-500) !important; }
+.fs-600 { font-size: var(--fs-600) !important; }
+.fs-700 { font-size: var(--fs-700) !important; }
+.fs-800 { font-size: var(--fs-800) !important; }
